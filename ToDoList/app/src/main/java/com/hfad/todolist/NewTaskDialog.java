@@ -46,7 +46,7 @@ public class NewTaskDialog extends DialogFragment {
         taskEntry = dialogView.findViewById(R.id.taskText);
         dateEntry = dialogView.findViewById(R.id.taskDueDate);
 
-        builder.setPositiveButton("Add This", (dialog, which) -> {
+        builder.setPositiveButton("Add Task", (dialog, which) -> {
            task = taskEntry.getText().toString();
            dueDate = dateEntry.getText().toString();
            if (TextUtils.isEmpty(task) || TextUtils.isEmpty(dueDate)) {
@@ -56,7 +56,7 @@ public class NewTaskDialog extends DialogFragment {
            listener.storeTask(task, dueDate);
         });
 
-        builder.setNegativeButton("Dont Add", (dialog, which) -> {
+        builder.setNegativeButton("Cancel", (dialog, which) -> {
             Log.i("INFO", "Task add cancelled.");
         });
 
